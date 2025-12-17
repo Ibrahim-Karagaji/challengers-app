@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    background-color: #eeeeeeab;
+    border-radius: 5px;
+    width: 10px;
+    height: 010px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2563eb;
+    border-radius: 5px;
+    border: solid 2px #eee;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3px;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    background-color: #2563eb;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 99vh;
+}
+
+h1,
+p {
+    color: #eee;
+    font-size: 24px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1:hover,
+p:hover {
+    background: #fff;
+    color: #2563eb;
+    transform: scale(1.05);
+}
+
+p {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.landing .cards {
+    text-align: center;
+    flex: 1;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+}
+
+.landing .cards a {
+    align-content: center;
+    background-color: #eee;
+    color: #2563eb;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    font-size: 25px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.landing .cards a:hover {
+    background-color: #eeeeeef0;
+    transform: scale(1.02);
+}
+
+a {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #2563eb;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #eeeeeef0;
+    transform: scale(1.02);
+}
+
+.error,
+.error a {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.error a {
+    margin-left: -2px;
+    font-weight: 900;
+    padding: 0px;
+}
+
+.error a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .landing .cards {
+        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .landing .cards a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .landing .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .landing .cards a {
+        font-size: 15px;
+    }
+
+    .error,
+    .error a {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}

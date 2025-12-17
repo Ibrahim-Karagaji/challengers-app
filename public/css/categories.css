@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    background-color: #eeeeeeab;
+    border-radius: 5px;
+    width: 10px;
+    height: 010px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2563eb;
+    border-radius: 5px;
+    border: solid 2px #eee;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3px;
+}
+
+.landing {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    margin-top: 3px;
+    align-content: start;
+    width: 100%;
+    min-height: 88vh;
+    background-color: #2563eb;
+    padding: 12px;
+    border-radius: 5px;
+    gap: 15px;
+}
+
+h1 {
+    color: #eee;
+    font-size: 24px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+h1:hover {
+    background: #fff;
+    color: #2563eb;
+    transform: scale(1.05);
+}
+
+p {
+    color: #eee;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 12px;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    background-color: #1d4ed8;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card:hover {
+        background-color: #1d4ed8;
+        color: #fff;
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+}

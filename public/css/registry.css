@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    background-color: #eeeeeeab;
+    border-radius: 5px;
+    width: 10px;
+    height: 010px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2563eb;
+    border-radius: 5px;
+    border: solid 2px #eee;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2px;
+}
+
+.landing {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: calc(100vh - 7px);
+    background-color: #2563eb;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.landing h1 {
+    color: #eee;
+    transition: 0.3s;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-size: 23px;
+}
+
+.landing h1:hover {
+    background-color: #eee;
+    color: #2563eb;
+    transform: scale(1.1);
+}
+
+p {
+    color: #ddd;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.form-box {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 330px;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 6px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: #2563eb 1px solid;
+    border: #2563eb 1px solid;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 9px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-box button:hover {
+    background-color: #1d4ed8;
+}
+
+.form-box p {
+    margin-top: 8px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.success {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.options {
+    display: flex;
+    gap: 3px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a {
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #2563eb;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #1d4ed8;
+}
+
+@media (max-width: 480px) {
+    .landing {
+        gap: 12px;
+        padding: 10px;
+    }
+
+    .form-box {
+        max-width: 100%;
+        padding: 12px;
+    }
+}

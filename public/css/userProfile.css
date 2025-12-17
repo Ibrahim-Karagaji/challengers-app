@@ -1,0 +1,338 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    background-color: #eeeeeeab;
+    border-radius: 5px;
+    width: 10px;
+    height: 010px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2563eb;
+    border-radius: 5px;
+    border: solid 2px #eee;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3px;
+}
+
+.profile-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #eee;
+    border-radius: 10px;
+    display: grid;
+    gap: 20px;
+    font-family: "Cairo", sans-serif;
+}
+
+.user-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background-color: #2563eb;
+    padding: 20px;
+    border-radius: 10px;
+    color: #eee;
+    transition: transform 0.2s ease;
+}
+
+.user-info:hover {
+    transform: scale(1.02);
+}
+
+.user-info .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+}
+
+.user-info .info h2 {
+    margin: 0 0 5px;
+    font-size: 1.8rem;
+    color: #eee;
+}
+
+.user-info .info p {
+    margin: 0 0 10px;
+    font-size: 1rem;
+}
+
+.user-info button {
+    padding: 8px 16px;
+    background-color: #eee;
+    color: #2563eb;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.user-info button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.02);
+}
+
+.user-exams h3 {
+    font-size: 1.4rem;
+    text-align: center;
+    color: #2563eb;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.user-exams table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-exams table th,
+.user-exams table td {
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-exams table th {
+    background-color: #2563eb;
+    color: #eee;
+}
+
+.user-exams table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+.user-exams table tr:hover {
+    background-color: #e0e7ff;
+    transform: scale(1.01);
+}
+
+#editProfileModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 10px;
+    box-sizing: border-box;
+    align-content: center;
+}
+
+#editProfileModal form {
+    background-color: #eee;
+    padding: 25px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 100%;
+    display: grid;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin: auto;
+}
+
+#editProfileModal label {
+    font-weight: bold;
+    color: #2563eb;
+}
+
+#editProfileModal input[type="text"],
+#editProfileModal input[type="file"],
+#editProfileModal button {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+#editProfileModal input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#editProfileModal button[type="submit"] {
+    background-color: #2563eb;
+    color: #eee;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#editProfileModal button[type="submit"]:hover {
+    background-color: #1d4db7;
+    transform: scale(1.02);
+}
+
+#editProfileModal button[type="button"] {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#editProfileModal button[type="button"]:hover {
+    background-color: #e53935;
+    transform: scale(1.02);
+}
+
+td span {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .user-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .user-exams h3 {
+        font-size: 1.3rem;
+    }
+
+    .user-info .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user-info .info h2 {
+        font-size: 1.4rem;
+    }
+
+    .user-info .info p {
+        font-size: 0.9rem;
+    }
+
+    .user-exams table th,
+    .user-exams table td {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
+
+    #editProfileModal form {
+        width: 90%;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .user-info .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    td span {
+        display: inline;
+    }
+
+    .user-info .info h2 {
+        font-size: 1.2rem;
+    }
+
+    .user-info .info p {
+        font-size: 0.8rem;
+    }
+
+    .user-info button {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    .user-exams table td {
+        display: flex;
+        justify-content: start;
+        gap: 2px;
+    }
+
+    .user-exams table th,
+    .user-exams table td {
+        font-size: 0.75rem;
+        padding: 4px 6px;
+    }
+
+    #editProfileModal form {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .user-exams table,
+    .user-exams thead,
+    .user-exams tbody,
+    .user-exams th,
+    .user-exams td,
+    .user-exams tr {
+        display: block;
+        width: 100%;
+    }
+
+    .user-exams thead {
+        display: none;
+    }
+
+    .user-exams tr {
+        margin-bottom: 12px;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-exams td {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 8px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.8rem;
+    }
+
+    .user-exams td:last-child {
+        border-bottom: 0;
+    }
+
+    .user-exams td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+    #editProfileModal form {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #editProfileModal input[type="text"],
+    #editProfileModal input[type="file"],
+    #editProfileModal button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}

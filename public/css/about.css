@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    max-width: 1366px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 3px;
+}
+
+*::-webkit-scrollbar {
+    background-color: #eeeeeeab;
+    border-radius: 5px;
+    width: 10px;
+    height: 010px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2563eb;
+    border-radius: 5px;
+    border: solid 2px #eee;
+}
+
+.landing {
+    text-align: center;
+    display: grid;
+    line-height: 1.5;
+    align-content: start;
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - 72px);
+    background-color: #2563eb;
+    padding: 12px;
+    border-radius: 5px;
+    gap: 8px;
+    margin-top: 3px;
+}
+
+h1 {
+    color: #eee;
+    font-size: 24px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+h1:hover {
+    background: #fff;
+    color: #2563eb;
+    transform: scale(1.05);
+}
+
+.info-box {
+    background: white;
+    max-width: 800px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.info-box h3 {
+    color: #2563eb;
+    margin-bottom: 6px;
+}
+
+.steps {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.steps li {
+    margin-bottom: 6px;
+    padding-left: 10px;
+    position: relative;
+}
+
+@media (max-width: 480px) {
+    .info-box {
+        font-size: 13px;
+        padding: 15px;
+    }
+}
