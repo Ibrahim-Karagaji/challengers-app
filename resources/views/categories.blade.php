@@ -13,9 +13,9 @@
 
 <body>
 
-    @extends("layout.layout")
+    @extends("layout.layout" )
 
-    @section('content' )
+    @section('content')
     <div class="landing">
         <h1>Categories</h1>
         <p>Explore the different categories of quizzes and challenges to improve your skills and test your knowledge!</p>
