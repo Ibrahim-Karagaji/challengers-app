@@ -1,116 +1,130 @@
+:root {
+  --cat-bg: #070a13;
+  --cat-card: rgba(15, 23, 42, 0.8);
+  --cat-accent: #38bdf8;
+  --cat-text: #f8fafc;
+  --cat-dim: #94a3b8;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 *::-webkit-scrollbar {
-    background-color: #eeeeeeab;
-    border-radius: 5px;
-    width: 10px;
-    height: 010px;
+  width: 5px;
+  background-color: var(--cat-bg);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #2563eb;
-    border-radius: 5px;
-    border: solid 2px #eee;
+  background: var(--cat-accent);
+  border-radius: 10px;
 }
 
 body {
-    font-family: "Cairo", sans-serif;
-    max-width: 1366px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 3px;
+  font-family: "Cairo", sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0%, #070a13 100%);
+  background-attachment: fixed;
+  color: var(--cat-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .landing {
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    margin-top: 3px;
-    align-content: start;
-    width: 100%;
-    min-height: 88vh;
-    background-color: #2563eb;
-    padding: 12px;
-    border-radius: 5px;
-    gap: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  padding: 20px 15px;
+  gap: 12px;
+  background-color: transparent !important;
 }
 
-h1 {
-    color: #eee;
-    font-size: 24px;
-    padding: 5px 10px;
-    border-radius: 6px;
-    transition: 0.3s;
+.landing > h1 {
+  color: var(--cat-text) !important;
+  font-size: clamp(1.1rem, 4vw, 1.7rem) !important;
+  font-weight: 800;
+  white-space: nowrap;
+  text-transform: uppercase;
+  margin: 10px 0 5px 0 !important;
+  background: none !important;
 }
 
-h1:hover {
-    background: #fff;
-    color: #2563eb;
-    transform: scale(1.05);
-}
-
-p {
-    color: #eee;
-    font-size: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.5;
+.landing > p {
+  color: var(--cat-dim);
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  max-width: 550px;
+  line-height: 1.4;
+  margin: 0 auto 10px auto;
 }
 
 .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 100%;
-    max-width: 900px;
-    margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 10px;
 }
 
 .card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+  background: var(--cat-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px 10px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cat-text) !important;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
 }
 
 .card:hover {
-    background-color: #1d4ed8;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-a {
-    text-decoration: none;
-    color: black;
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--cat-accent);
+  color: var(--cat-accent) !important;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .card:hover {
-        background-color: #1d4ed8;
-        color: #fff;
-        transform: scale(1.02);
-    }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
+  .landing {
+    padding-top: 15px;
+  }
 
-    p {
-        font-size: 13px;
-    }
+  .landing > h1 {
+    font-size: 1.1rem !important;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+}
+
+a {
+  text-decoration: none;
 }

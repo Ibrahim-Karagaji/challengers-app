@@ -1,197 +1,179 @@
+:root {
+  --res-bg: #070a13;
+  --res-card: rgba(15, 23, 42, 0.8);
+  --res-accent: #38bdf8;
+  --res-text: #f8fafc;
+  --res-dim: #94a3b8;
+  --res-glass: rgba(255, 255, 255, 0.05);
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 *::-webkit-scrollbar {
-    background-color: #eeeeeeab;
-    border-radius: 5px;
-    width: 10px;
-    height: 010px;
+  width: 5px;
+  background-color: var(--res-bg);
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #2563eb;
-    border-radius: 5px;
-    border: solid 2px #eee;
+  background: var(--res-accent);
+  border-radius: 10px;
 }
 
 body {
-    font-family: "Cairo", sans-serif;
-    max-width: 1366px;
-    margin: 0 auto;
-    width: 100%;
-    padding: 3px;
+  font-family: "Cairo", sans-serif;
+  background: radial-gradient(circle at top, #1e293b 0%, #070a13 100%);
+  background-attachment: fixed;
+  color: var(--res-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 section {
-    display: grid;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #2563eb;
+  text-align: center;
+  padding: 30px 15px 15px;
+  width: 100%;
 }
 
-section h1,
-p {
-    color: #eee;
-    font-size: 28px;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: 0.3s;
-    margin: auto;
-    width: fit-content;
+section h1 {
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  color: var(--res-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
 section p {
-    font-size: 13px;
-}
-
-section h1:hover {
-    background-color: #fff;
-    color: #2563eb;
-    transform: scale(1.02);
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+  color: var(--res-dim);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
 }
 
 .landing {
-    text-align: center;
-    display: grid;
-    place-items: center;
-    width: 100%;
-    min-height: 87vh;
-    background-color: #2563eb;
-    padding: 10px;
-    border-radius: 5px;
-    gap: 12px;
-    margin-top: 4px;
+  width: 100%;
+  max-width: 750px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .statistics {
-    width: 100%;
-    display: grid;
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 5px;
+  background: var(--res-card);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--res-accent);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
 }
 
 .statistics p {
-    color: #2563eb;
-    font-size: 23px;
+  color: var(--res-text);
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.statistics strong {
+  color: var(--res-accent);
 }
 
 .statistics h4 {
-    color: #2563eb;
-    text-align: start;
-    font-size: 20px;
+  color: var(--res-accent);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  letter-spacing: 1px;
 }
 
 .question-parent {
-    display: flex;
-    flex-direction: column;
-    background-color: #eee;
-    border: 2px solid #2563eb;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    transition: transform 0.2s ease;
+  background: var(--res-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s ease;
 }
 
 .question-parent:hover {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .question-parent span {
-    width: 100%;
-    background-color: white;
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 8px;
-    cursor: default;
-    border: 1px solid #2563eb;
-    transition: all 0.2s ease;
-    font-family: "Cairo", sans-serif;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--res-glass);
+  color: var(--res-dim);
+  text-align: left;
 }
 
 .question-parent span:first-child {
-    font-weight: bold;
-    background-color: #2563eb;
-    color: white;
-    border: none;
+  font-weight: 800;
+  color: var(--res-accent);
+  background: transparent;
+  padding-left: 0;
+  font-size: 0.9rem;
 }
 
-.question-parent span:hover {
-    background-color: #2563eb;
-    color: white;
+.question-parent span:nth-child(2) {
+  color: var(--res-text);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 600;
 }
 
-a {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    background-color: #eee;
-    color: #2563eb;
-    text-align: center;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
+.question-parent span:nth-child(4) {
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
 }
 
-a:hover {
-    background-color: #eeeeeef0;
-    transform: scale(1.02);
+.landing > a {
+  width: 100%;
+  max-width: 250px;
+  margin: 20px auto;
+  padding: 12px;
+  background: var(--res-accent);
+  color: #070a13;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-    .question-parent {
-        padding: 15px;
-    }
-
-    .question-parent span {
-        padding: 8px 12px;
-        font-size: 0.95rem;
-    }
-
-    .exam-score {
-        font-size: 1.3rem;
-    }
+.landing > a:hover {
+  background: #7dd3fc;
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3);
 }
 
 @media (max-width: 600px) {
-    section {
-        padding: 5px;
-    }
+  .landing {
+    padding: 10px;
+  }
 
-    section h1 {
-        font-size: 20px;
-    }
+  .statistics {
+    padding: 15px;
+  }
 
-    section p {
-        font-size: 12px;
-    }
+  .question-parent {
+    padding: 15px;
+  }
 
-    .statistics p {
-        font-size: 18px;
-    }
-
-    .statistics h4 {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .question-parent {
-        padding: 12px;
-    }
-
-    .question-parent span {
-        padding: 6px 10px;
-        font-size: 0.9rem;
-    }
-
-    .exam-score {
-        font-size: 1.1rem;
-    }
+  .question-parent span {
+    font-size: 0.8rem;
+  }
 }
